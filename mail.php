@@ -19,10 +19,10 @@ header("Access-Control-Allow-Origin: *");
         }
  
         // Set the recipient email address.
-        $recipient = "test@hasthemes.com";
+        $recipient = "info@gurshatoursethiopiatours.com";
  
         // Set the email subject.
-        $subject = "Test Email for Template Demo - Mail From $name";
+        $subject = "New Mail From $name";
  
         // Build the email content.
         $email_content = "Name: $name\n";
