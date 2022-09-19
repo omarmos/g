@@ -7,11 +7,11 @@ header("Access-Control-Allow-Origin: *");
                 $name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_POST["con_email"]), FILTER_SANITIZE_EMAIL);
         $message = trim($_POST["con_message"]);
-        $check = strip_tags($_POST["check"]);
+        // $check = strip_tags($_POST["check"]);
         $phone = strip_tags($_POST["con_phone"]);
  
         // Check that data was sent to the mailer.
-        if ( empty($name) OR empty($message) OR empty($check) OR empty($phone) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if ( empty($name) OR empty($message) OR empty($phone) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
             echo "Please complete the form and try again.";
@@ -19,7 +19,7 @@ header("Access-Control-Allow-Origin: *");
         }
  
         // Set the recipient email address.
-        $recipient = "info@gurshatoursethiopiatours.com";
+         $recipient = "info@gurshaethiopiatours.com";
  
         // Set the email subject.
         $subject = "New Mail From $name";
@@ -28,7 +28,7 @@ header("Access-Control-Allow-Origin: *");
         $email_content = "Name: $name\n";
         $email_content .= "Email: $email\n\n";
         $email_content .= "phone: $phone\n\n";
-        $email_content .= "check: $check\n\n";
+       // $email_content .= "check: $check\n\n";
         $email_content .= "Message:\n$message\n";
  
         // Build the email headers.
